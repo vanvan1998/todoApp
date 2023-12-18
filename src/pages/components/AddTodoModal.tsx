@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
-import { MODE } from "../../constants";
-import { AddTodo } from "./AddTodo";
+import React, { useState } from 'react';
+import { Button, Modal } from 'react-bootstrap';
+import { MODE } from '../../constants';
+import { AddTodo } from './addTodo';
 
 export const AddTodoModal = ({ addItem }: { addItem: Function }) => {
   const [show, setShow] = useState(false);
@@ -11,19 +11,18 @@ export const AddTodoModal = ({ addItem }: { addItem: Function }) => {
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
+      <Button variant='primary' onClick={handleShow}>
         Add
       </Button>
 
       <Modal
         style={{
-          width: "100%",
-          height: "100vh",
-          paddingTop: 120,
+          width: '100%',
+          height: '100vh',
+          paddingTop: 120
         }}
         show={show}
-        onHide={handleClose}
-      >
+        onHide={handleClose}>
         <AddTodo mode={MODE.ADD} addItem={addItem} onComplete={handleClose} />
       </Modal>
     </div>
